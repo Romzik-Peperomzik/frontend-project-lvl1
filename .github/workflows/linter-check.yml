@@ -1,8 +1,10 @@
 name: linter-check 
 on: [push]
 jobs:
-  Linter-checking:
+  linter-checking:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2  
+      - run: make install
       - run: make lint 
 
