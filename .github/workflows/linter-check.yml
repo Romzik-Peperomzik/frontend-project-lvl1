@@ -1,0 +1,8 @@
+name: linter-check 
+on: [push]
+jobs:
+  Linter-checking:
+    runs-on: ubuntu-latest
+    steps:
+      - run: make lint 
+
