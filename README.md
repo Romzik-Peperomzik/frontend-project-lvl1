@@ -1,8 +1,15 @@
+# Simple brain games
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Romzik-Peperomzik/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Romzik-Peperomzik/frontend-project-lvl1/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
-[![lint](https://github.com/Romzik-Peperomzik/frontend-project-lvl1/actions/workflows/linter-check.yml/badge.svg)](https://github.com/Romzik-Peperomzik/frontend-project-lvl1/actions/workflows/linter-check.yml)
-### Games, run and install:
+[![Linter Status](https://github.com/Romzik-Peperomzik/frontend-project-lvl1/workflows/linter-check/badge.svg)](https://github.com/Romzik-Peperomzik/frontend-project-lvl1/actions)
+
+## Setup:
+```sh
+make install
+```
+## Run games:
 <details>
 <summary><h4>Brain-even:</h4></summary>
   <a href="https://asciinema.org/a/YMR3TXMtZ34vUNCgoV8IbkQfo" target="_blank"><img src="https://asciinema.org/a/YMR3TXMtZ34vUNCgoV8IbkQfo.svg" /></a> 
