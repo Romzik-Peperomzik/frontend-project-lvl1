@@ -1,6 +1,5 @@
-#!/usr/bin/node
 import _ from 'lodash';
-import { gameGreeting, playerInput, resultAnnouncement } from '../../src/index.js';
+import { gameGreeting, playerInput, resultAnnouncement } from '../index.js';
 
 function generateDataForGame() {
   return [_.random(1, 100), _.random(1, 100)];
@@ -13,7 +12,8 @@ function gcd(a, b) {
   return gcd(b, a % b);
 }
 
-function playBrainGCD(player) {
+export default function playBrainGCD() {
+  const player = gameGreeting('Find the greatest common divisor of given numbers.');
   let answerAreCorrectFlag = true;
   let roundCount = 0;
   let gcdNumber = 0;
@@ -33,6 +33,3 @@ function playBrainGCD(player) {
   }
   resultAnnouncement(player, answer, answerAreCorrectFlag, gcdNumber);
 }
-
-const brainGCDGreeting = 'Find the greatest common divisor of given numbers.';
-playBrainGCD(gameGreeting(brainGCDGreeting));

@@ -1,6 +1,5 @@
-#!/usr/bin/node
 import _ from 'lodash';
-import { gameGreeting, playerInput, resultAnnouncement } from '../../src/index.js';
+import { gameGreeting, playerInput, resultAnnouncement } from '../index.js';
 
 function isPrime(num) {
   for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) {
@@ -11,7 +10,8 @@ function isPrime(num) {
   return num > 1;
 }
 
-function playBrainPrime(player) {
+export default function playBrainPrime() {
+  const player = gameGreeting('Answer "yes" if given number is prime. Otherwise answer "no".');
   let answerAreCorrectFlag = true;
   let roundCount = 0;
   let itIsPrime;
@@ -33,6 +33,3 @@ function playBrainPrime(player) {
   const correctAnswer = itIsPrime ? 'yes' : 'no';
   resultAnnouncement(player, answer, answerAreCorrectFlag, correctAnswer);
 }
-
-const brainPrimeGreeting = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-playBrainPrime(gameGreeting(brainPrimeGreeting));

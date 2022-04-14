@@ -1,12 +1,12 @@
-#!/usr/bin/node
 import _ from 'lodash';
-import { gameGreeting, playerInput, resultAnnouncement } from '../../src/index.js';
+import { gameGreeting, playerInput, resultAnnouncement } from '../index.js';
 
 function generateDataForGame() {
   return [_.random(1, 25), _.random(1, 25), _.random(0, 2)];
 }
 
-function playBrainCalc(player) {
+export default function playBrainCalc() {
+  const player = gameGreeting('What is the result of the expression?');
   let answerAreCorrectFlag = true;
   let roundCount = 0;
   let expressionResult = 0;
@@ -42,6 +42,3 @@ function playBrainCalc(player) {
   }
   resultAnnouncement(player, answer, answerAreCorrectFlag, expressionResult);
 }
-
-const brainCalcGreeting = 'What is the result of the expression?';
-playBrainCalc(gameGreeting(brainCalcGreeting));

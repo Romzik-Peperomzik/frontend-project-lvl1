@@ -1,6 +1,5 @@
-#!/usr/bin/node
 import _ from 'lodash';
-import { gameGreeting, playerInput, resultAnnouncement } from '../../src/index.js';
+import { gameGreeting, playerInput, resultAnnouncement } from '../index.js';
 
 function generateDataForGame() {
   const progressionLength = _.random(5, 10);
@@ -22,7 +21,8 @@ function generateDataForGame() {
   return [progressionArray, missingElement];
 }
 
-function playBrainProgression(player) {
+export default function playBrainProgression() {
+  const player = gameGreeting('What number is missing in the progression?');
   let answerAreCorrectFlag = true;
   let roundCount = 0;
   let missingElement;
@@ -41,6 +41,3 @@ function playBrainProgression(player) {
   }
   resultAnnouncement(player, answer, answerAreCorrectFlag, missingElement);
 }
-
-const brainProgressionGreeting = 'What number is missing in the progression?';
-playBrainProgression(gameGreeting(brainProgressionGreeting));

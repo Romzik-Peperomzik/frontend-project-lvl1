@@ -1,8 +1,8 @@
-#!/usr/bin/node
 import _ from 'lodash';
-import { gameGreeting, playerInput, resultAnnouncement } from '../../src/index.js';
+import { gameGreeting, playerInput, resultAnnouncement } from '../index.js';
 
-function playBrainEven(player) {
+export default function playBrainEven() {
+  const player = gameGreeting('Answer "yes" if the number is even, otherwise answer "no".');
   let answerAreCorrectFlag = true;
   let roundCount = 0;
   let isGameNumberEven;
@@ -24,6 +24,3 @@ function playBrainEven(player) {
   const correctAnswer = isGameNumberEven ? 'yes' : 'no';
   resultAnnouncement(player, answer, answerAreCorrectFlag, correctAnswer);
 }
-
-const brainEvenGreeting = 'Answer "yes" if the number is even, otherwise answer "no".';
-playBrainEven(gameGreeting(brainEvenGreeting));
