@@ -1,6 +1,6 @@
 #!/usr/bin/node
 import _ from 'lodash';
-import { gameGreeting, playerInput, resultAnnouncement } from '../index.js';
+import { gameGreeting, playerInput, resultAnnouncement } from '../../src/index.js';
 
 function isPrime(num) {
   for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) {

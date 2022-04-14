@@ -1,6 +1,6 @@
 #!/usr/bin/node
 import _ from 'lodash';
-import { gameGreeting, playerInput, resultAnnouncement } from '../index.js';
+import { gameGreeting, playerInput, resultAnnouncement } from '../../src/index.js';
 
 function generateDataForGame() {
   return [_.random(1, 25), _.random(1, 25), _.random(0, 2)];

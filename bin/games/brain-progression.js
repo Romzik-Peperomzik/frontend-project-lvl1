@@ -1,6 +1,6 @@
 #!/usr/bin/node
 import _ from 'lodash';
-import { gameGreeting, playerInput, resultAnnouncement } from '../index.js';
+import { gameGreeting, playerInput, resultAnnouncement } from '../../src/index.js';
 
 function generateDataForGame() {
   const progressionLength = _.random(5, 10);
