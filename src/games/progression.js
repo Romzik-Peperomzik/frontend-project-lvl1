@@ -15,7 +15,7 @@ function generateDataForGame() {
       progressionNumber += progressionStep;
     }
   }
-  return [progressionArray, missingElement];
+  return [progressionArray.join(' '), missingElement];
 }
 
 const dataForProgressionGame = () => {
