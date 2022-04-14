@@ -43,4 +43,5 @@ function playBrainCalc(player) {
   resultAnnouncement(player, answer, answerAreCorrectFlag, expressionResult);
 }
 
-playBrainCalc(gameGreeting('What is the result of the expression?'));
+const brainCalcGreeting = 'What is the result of the expression?';
+playBrainCalc(gameGreeting(brainCalcGreeting));

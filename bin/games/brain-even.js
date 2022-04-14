@@ -25,4 +25,5 @@ function playBrainEven(player) {
   resultAnnouncement(player, answer, answerAreCorrectFlag, correctAnswer);
 }
 
-playBrainEven(gameGreeting('Answer "yes" if the number is even, otherwise answer "no".'));
+const brainEvenGreeting = 'Answer "yes" if the number is even, otherwise answer "no".';
+playBrainEven(gameGreeting(brainEvenGreeting));

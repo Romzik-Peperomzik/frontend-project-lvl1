@@ -34,4 +34,5 @@ function playBrainGCD(player) {
   resultAnnouncement(player, answer, answerAreCorrectFlag, gcdNumber);
 }
 
-playBrainGCD(gameGreeting('Find the greatest common divisor of given numbers.'));
+const brainGCDGreeting = 'Find the greatest common divisor of given numbers.';
+playBrainGCD(gameGreeting(brainGCDGreeting));

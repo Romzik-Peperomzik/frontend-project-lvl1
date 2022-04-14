@@ -42,4 +42,5 @@ function playBrainProgression(player) {
   resultAnnouncement(player, answer, answerAreCorrectFlag, missingElement);
 }
 
-playBrainProgression(gameGreeting('What number is missing in the progression?'));
+const brainProgressionGreeting = 'What number is missing in the progression?';
+playBrainProgression(gameGreeting(brainProgressionGreeting));

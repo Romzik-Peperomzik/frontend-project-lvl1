@@ -34,4 +34,5 @@ function playBrainPrime(player) {
   resultAnnouncement(player, answer, answerAreCorrectFlag, correctAnswer);
 }
 
-playBrainPrime(gameGreeting('Answer "yes" if given number is prime. Otherwise answer "no".'));
+const brainPrimeGreeting = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+playBrainPrime(gameGreeting(brainPrimeGreeting));
