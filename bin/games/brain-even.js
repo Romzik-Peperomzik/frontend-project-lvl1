@@ -3,7 +3,6 @@ import _ from 'lodash';
 import { gameGreeting, playerInput, resultAnnouncement } from '../index.js';
 
 function playBrainEven(player) {
-  console.log(`Hello, ${player}!\nAnswer "yes" if the number is even, otherwise answer "no".`);
   let answerAreCorrectFlag = true;
   let roundCount = 0;
   let isGameNumberEven;
@@ -26,4 +25,4 @@ function playBrainEven(player) {
   resultAnnouncement(player, answer, answerAreCorrectFlag, correctAnswer);
 }
 
-playBrainEven(gameGreeting());
+playBrainEven(gameGreeting('Answer "yes" if the number is even, otherwise answer "no".'));

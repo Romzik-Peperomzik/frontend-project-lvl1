@@ -12,7 +12,6 @@ function isPrime(num) {
 }
 
 function playBrainPrime(player) {
-  console.log(`Hello, ${player}!\nAnswer "yes" if given number is prime. Otherwise answer "no".`);
   let answerAreCorrectFlag = true;
   let roundCount = 0;
   let itIsPrime;
@@ -35,4 +34,4 @@ function playBrainPrime(player) {
   resultAnnouncement(player, answer, answerAreCorrectFlag, correctAnswer);
 }
 
-playBrainPrime(gameGreeting());
+playBrainPrime(gameGreeting('Answer "yes" if given number is prime. Otherwise answer "no".'));

@@ -7,7 +7,6 @@ function generateDataForGame() {
 }
 
 function playBrainCalc(player) {
-  console.log(`Hello, ${player}!\nWhat is the result of the expression?`);
   let answerAreCorrectFlag = true;
   let roundCount = 0;
   let expressionResult = 0;
@@ -44,4 +43,4 @@ function playBrainCalc(player) {
   resultAnnouncement(player, answer, answerAreCorrectFlag, expressionResult);
 }
 
-playBrainCalc(gameGreeting());
+playBrainCalc(gameGreeting('What is the result of the expression?'));

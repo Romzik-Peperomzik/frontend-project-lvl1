@@ -14,7 +14,6 @@ function gcd(a, b) {
 }
 
 function playBrainGCD(player) {
-  console.log(`Hello, ${player}!\nFind the greatest common divisor of given numbers.`);
   let answerAreCorrectFlag = true;
   let roundCount = 0;
   let gcdNumber = 0;
@@ -35,4 +34,4 @@ function playBrainGCD(player) {
   resultAnnouncement(player, answer, answerAreCorrectFlag, gcdNumber);
 }
 
-playBrainGCD(gameGreeting());
+playBrainGCD(gameGreeting('Find the greatest common divisor of given numbers.'));

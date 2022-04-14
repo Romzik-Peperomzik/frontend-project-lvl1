@@ -23,7 +23,6 @@ function generateDataForGame() {
 }
 
 function playBrainProgression(player) {
-  console.log(`Hello, ${player}!\nWhat number is missing in the progression?`);
   let answerAreCorrectFlag = true;
   let roundCount = 0;
   let missingElement;
@@ -43,4 +42,4 @@ function playBrainProgression(player) {
   resultAnnouncement(player, answer, answerAreCorrectFlag, missingElement);
 }
 
-playBrainProgression(gameGreeting());
+playBrainProgression(gameGreeting('What number is missing in the progression?'));
