@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { gameGreeting, playerInput, resultAnnouncement } from '../index.js';
+import gameEventLoop from '../game-event.js';
 
 function generateDataForGame() {
   return [_.random(1, 100), _.random(1, 100)];
@@ -12,24 +12,12 @@ function gcd(a, b) {
   return gcd(b, a % b);
 }
 
+const dataForGCDGame = () => {
+  const [firstNumber, secondNumber] = generateDataForGame();
+  const isGCDNumbers = gcd(firstNumber, secondNumber);
+  return [`${firstNumber} ${secondNumber}`, isGCDNumbers];
+};
+
 export default function playBrainGCD() {
-  const player = gameGreeting('Find the greatest common divisor of given numbers.');
-  let answerAreCorrectFlag = true;
-  let roundCount = 0;
-  let gcdNumber = 0;
-  let answer;
-
-  while (roundCount < 3 && answerAreCorrectFlag) {
-    roundCount += 1;
-    const [firstNumber, secondNumber] = generateDataForGame();
-    gcdNumber = gcd(firstNumber, secondNumber);
-    answer = playerInput(`${firstNumber} ${secondNumber}`);
-
-    if (Number(answer) === gcdNumber) {
-      console.log('Correct!');
-    } else {
-      answerAreCorrectFlag = false;
-    }
-  }
-  resultAnnouncement(player, answer, answerAreCorrectFlag, gcdNumber);
+  gameEventLoop('num', dataForGCDGame, 'Find the greatest common divisor of given numbers.');
 }

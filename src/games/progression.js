@@ -1,13 +1,10 @@
 import _ from 'lodash';
-import { gameGreeting, playerInput, resultAnnouncement } from '../index.js';
+import gameEventLoop from '../game-event.js';
 
 function generateDataForGame() {
-  const progressionLength = _.random(5, 10);
-  const progressionStep = _.random(2, 5);
-  let progressionNumber = _.random(1, 10);
-  const missingElementIndex = _.random(0, progressionLength - 1);
-  let missingElement;
-  const progressionArray = [];
+  const [progressionLength, progressionStep] = [_.random(5, 10), _.random(5, 10)];
+  const [missingElementIndex, progressionArray] = [_.random(0, progressionLength - 1), []];
+  let [progressionNumber, missingElement] = [_.random(1, 10), 0];
   for (let i = 0; i < progressionLength; i += 1) {
     if (i === missingElementIndex) {
       progressionArray.push('..');
@@ -21,23 +18,11 @@ function generateDataForGame() {
   return [progressionArray, missingElement];
 }
 
-export default function playBrainProgression() {
-  const player = gameGreeting('What number is missing in the progression?');
-  let answerAreCorrectFlag = true;
-  let roundCount = 0;
-  let missingElement;
-  let progressionArray;
-  let answer;
+const dataForProgressionGame = () => {
+  const [progressionArray, missingElement] = generateDataForGame();
+  return [progressionArray, missingElement];
+};
 
-  while (roundCount < 3 && answerAreCorrectFlag) {
-    roundCount += 1;
-    [progressionArray, missingElement] = generateDataForGame();
-    answer = playerInput(progressionArray.join(' '));
-    if (Number(answer) === missingElement) {
-      console.log('Correct!');
-    } else {
-      answerAreCorrectFlag = false;
-    }
-  }
-  resultAnnouncement(player, answer, answerAreCorrectFlag, missingElement);
+export default function playBrainProgression() {
+  gameEventLoop('num', dataForProgressionGame, 'What number is missing in the progression?');
 }
