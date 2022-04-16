@@ -10,33 +10,24 @@ function playerInput(question) {
   return readlineSync.question(`Question: ${question}\nYour answer: `);
 }
 
-function resultAnnouncement(player, playerAnswer, answerAreCorrectFlag, correctAnswer) {
-  if (answerAreCorrectFlag) {
-    console.log(`Congratulations, ${player}!`);
-  } else {
-    console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-    console.log(`Let's try again, ${player}!`);
-  }
+function resultWrongAnswerAnnouncement(player, playerAnswer, correctAnswer) {
+  console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+  console.log(`Let's try again, ${player}!`);
 }
 
 export default function gameEventLoop(gameFunction, greetingText) {
   const player = gameGreeting(greetingText);
-  let answerAreCorrectFlag = true;
-  let roundCount = 0;
-  let playerAnswer;
-  let dataToDisplay;
-  let expectedAnswer;
+  const maxRounds = 3;
 
-  while (roundCount < 3 && answerAreCorrectFlag) {
-    roundCount += 1;
-    [dataToDisplay, expectedAnswer] = gameFunction();
-    playerAnswer = playerInput(dataToDisplay);
+  for (let round = 0; round < maxRounds; round += 1) {
+    const [dataToDisplay, expectedAnswer] = gameFunction();
+    const playerAnswer = playerInput(dataToDisplay);
 
-    if (playerAnswer === expectedAnswer) {
-      console.log('Correct!');
-    } else {
-      answerAreCorrectFlag = false;
+    if (playerAnswer !== expectedAnswer) {
+      resultWrongAnswerAnnouncement(player, playerAnswer, expectedAnswer);
+      return;
     }
+    console.log('Correct!');
   }
-  resultAnnouncement(player, playerAnswer, answerAreCorrectFlag, expectedAnswer);
+  console.log(`Congratulations, ${player}!`);
 }
