@@ -1,8 +1,8 @@
-import _ from 'lodash';
+import getRandomInt from '../utils.js';
 import gameEventLoop from '../index.js';
 
 function generateDataForGame() {
-  return [_.random(1, 100), _.random(1, 100)];
+  return [getRandomInt(1, 100), getRandomInt(1, 100)];
 }
 
 function gcd(a, b) {

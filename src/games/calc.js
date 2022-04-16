@@ -1,8 +1,8 @@
-import _ from 'lodash';
+import getRandomInt from '../utils.js';
 import gameEventLoop from '../index.js';
 
 function generateDataForGame() {
-  return [_.random(1, 25), _.random(1, 25), _.random(0, 2)];
+  return [getRandomInt(1, 25), getRandomInt(1, 25), getRandomInt(0, 2)];
 }
 
 const dataForCalcGame = () => {

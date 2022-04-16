@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import getRandomInt from '../utils.js';
 import gameEventLoop from '../index.js';
 
 function isPrime(num) {
@@ -11,7 +11,7 @@ function isPrime(num) {
 }
 
 const dataForPrime = () => {
-  const numberForGame = _.random(0, 100);
+  const numberForGame = getRandomInt(0, 100);
   const itIsPrime = isPrime(numberForGame) ? 'yes' : 'no';
   return [numberForGame, itIsPrime];
 };

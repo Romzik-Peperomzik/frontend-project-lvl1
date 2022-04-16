@@ -1,10 +1,10 @@
-import _ from 'lodash';
+import getRandomInt from '../utils.js';
 import gameEventLoop from '../index.js';
 
 function generateDataForGame() {
-  const [progressionLength, progressionStep] = [_.random(5, 10), _.random(5, 10)];
-  const [missingElementIndex, progressionArray] = [_.random(0, progressionLength - 1), []];
-  let [progressionNumber, missingElement] = [_.random(1, 10), 0];
+  const [progressionLength, progressionStep] = [getRandomInt(5, 10), getRandomInt(5, 10)];
+  const [missingElementIndex, progressionArray] = [getRandomInt(0, progressionLength - 1), []];
+  let [progressionNumber, missingElement] = [getRandomInt(1, 10), 0];
   for (let i = 0; i < progressionLength; i += 1) {
     if (i === missingElementIndex) {
       progressionArray.push('..');
