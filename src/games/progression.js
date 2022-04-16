@@ -20,9 +20,9 @@ function generateDataForGame() {
 
 const dataForProgressionGame = () => {
   const [progressionArray, missingElement] = generateDataForGame();
-  return [progressionArray, missingElement];
+  return [progressionArray, String(missingElement)];
 };
 
 export default function playBrainProgression() {
-  gameEventLoop('num', dataForProgressionGame, 'What number is missing in the progression?');
+  gameEventLoop(dataForProgressionGame, 'What number is missing in the progression?');
 }

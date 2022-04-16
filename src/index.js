@@ -19,7 +19,7 @@ function resultAnnouncement(player, playerAnswer, answerAreCorrectFlag, correctA
   }
 }
 
-export default function gameEventLoop(answerType, gameFunction, greetingText) {
+export default function gameEventLoop(gameFunction, greetingText) {
   const player = gameGreeting(greetingText);
   let answerAreCorrectFlag = true;
   let roundCount = 0;
@@ -32,23 +32,11 @@ export default function gameEventLoop(answerType, gameFunction, greetingText) {
     [dataToDisplay, expectedAnswer] = gameFunction();
     playerAnswer = playerInput(dataToDisplay);
 
-    if (answerType === 'num') {
-      if (Number(playerAnswer) === expectedAnswer) {
-        console.log('Correct!');
-      } else {
-        answerAreCorrectFlag = false;
-      }
+    if (playerAnswer === expectedAnswer) {
+      console.log('Correct!');
     } else {
-      if ((expectedAnswer && playerAnswer !== 'yes') || (!expectedAnswer && playerAnswer !== 'no')) {
-        answerAreCorrectFlag = false;
-      }
-      if (answerAreCorrectFlag) {
-        console.log('Correct!');
-      }
+      answerAreCorrectFlag = false;
     }
-  }
-  if (answerType === 'bool') {
-    expectedAnswer = expectedAnswer ? 'yes' : 'no';
   }
   resultAnnouncement(player, playerAnswer, answerAreCorrectFlag, expectedAnswer);
 }

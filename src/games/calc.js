@@ -25,9 +25,9 @@ const dataForCalcGame = () => {
       expressionResult = firstNumber + secondNumber;
       break;
   }
-  return [expressionString, expressionResult];
+  return [expressionString, String(expressionResult)];
 };
 
 export default function playBrainCalc() {
-  gameEventLoop('num', dataForCalcGame, 'What is the result of the expression?');
+  gameEventLoop(dataForCalcGame, 'What is the result of the expression?');
 }

@@ -15,9 +15,9 @@ function gcd(a, b) {
 const dataForGCDGame = () => {
   const [firstNumber, secondNumber] = generateDataForGame();
   const isGCDNumbers = gcd(firstNumber, secondNumber);
-  return [`${firstNumber} ${secondNumber}`, isGCDNumbers];
+  return [`${firstNumber} ${secondNumber}`, String(isGCDNumbers)];
 };
 
 export default function playBrainGCD() {
-  gameEventLoop('num', dataForGCDGame, 'Find the greatest common divisor of given numbers.');
+  gameEventLoop(dataForGCDGame, 'Find the greatest common divisor of given numbers.');
 }

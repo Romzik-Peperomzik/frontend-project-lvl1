@@ -12,10 +12,10 @@ function isPrime(num) {
 
 const dataForPrime = () => {
   const numberForGame = _.random(0, 100);
-  const itIsPrime = isPrime(numberForGame);
+  const itIsPrime = isPrime(numberForGame) ? 'yes' : 'no';
   return [numberForGame, itIsPrime];
 };
 
 export default function playBrainPrime() {
-  gameEventLoop('bool', dataForPrime, 'Answer "yes" if given number is prime. Otherwise answer "no".');
+  gameEventLoop(dataForPrime, 'Answer "yes" if given number is prime. Otherwise answer "no".');
 }
