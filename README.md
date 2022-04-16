@@ -2,7 +2,7 @@
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Romzik-Peperomzik/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Romzik-Peperomzik/frontend-project-lvl1/actions)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c1ba843cb94d3030e494/maintainability)](https://codeclimate.com/github/Romzik-Peperomzik/frontend-project-lvl1/maintainability)
 [![Linter Status](https://github.com/Romzik-Peperomzik/frontend-project-lvl1/workflows/linter-check/badge.svg)](https://github.com/Romzik-Peperomzik/frontend-project-lvl1/actions)
 
 ## Game list:
