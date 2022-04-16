@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import gameEventLoop from '../game-event.js';
+import gameEventLoop from '../index.js';
 
 function isPrime(num) {
   for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) {

@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import gameEventLoop from '../game-event.js';
+import gameEventLoop from '../index.js';
 
 const dataForEvenGame = () => {
   const numberForGame = _.random(0, 100);

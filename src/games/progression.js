@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import gameEventLoop from '../game-event.js';
+import gameEventLoop from '../index.js';
 
 function generateDataForGame() {
   const [progressionLength, progressionStep] = [_.random(5, 10), _.random(5, 10)];
