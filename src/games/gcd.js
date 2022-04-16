@@ -14,8 +14,8 @@ function gcd(a, b) {
 
 const dataForGCDGame = () => {
   const [firstNumber, secondNumber] = generateDataForGame();
-  const isGCDNumbers = gcd(firstNumber, secondNumber);
-  return [`${firstNumber} ${secondNumber}`, String(isGCDNumbers)];
+  const GCDNumber = gcd(firstNumber, secondNumber);
+  return [`${firstNumber} ${secondNumber}`, String(GCDNumber)];
 };
 
 export default function playBrainGCD() {

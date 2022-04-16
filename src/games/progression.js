@@ -2,11 +2,17 @@ import getRandomInt from '../utils.js';
 import gameEventLoop from '../index.js';
 
 function generateDataForGame() {
-  const [progressionLength, progressionStep] = [getRandomInt(5, 10), getRandomInt(5, 10)];
-  const [missingElementIndex, progressionArray] = [getRandomInt(0, progressionLength - 1), []];
+  const progressionLength = getRandomInt(5, 10);
+  const missedElementIndex = getRandomInt(0, progressionLength - 1);
+  return [progressionLength, getRandomInt(5, 10), missedElementIndex];
+}
+
+const dataForProgressionGame = () => {
+  const progressionArray = [];
+  const [progressionLength, progressionStep, missedElementIndex] = generateDataForGame();
   let [progressionNumber, missingElement] = [getRandomInt(1, 10), 0];
   for (let i = 0; i < progressionLength; i += 1) {
-    if (i === missingElementIndex) {
+    if (i === missedElementIndex) {
       progressionArray.push('..');
       missingElement = progressionNumber;
       progressionNumber += progressionStep;
@@ -15,12 +21,7 @@ function generateDataForGame() {
       progressionNumber += progressionStep;
     }
   }
-  return [progressionArray.join(' '), missingElement];
-}
-
-const dataForProgressionGame = () => {
-  const [progressionArray, missingElement] = generateDataForGame();
-  return [progressionArray, String(missingElement)];
+  return [progressionArray.join(' '), String(missingElement)];
 };
 
 export default function playBrainProgression() {
