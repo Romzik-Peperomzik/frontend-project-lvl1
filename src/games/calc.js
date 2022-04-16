@@ -2,7 +2,20 @@ import getRandomInt from '../utils.js';
 import gameEventLoop from '../index.js';
 
 function generateDataForGame() {
-  return [getRandomInt(1, 25), getRandomInt(1, 25), getRandomInt(0, 2)];
+  const signArray = ['+', '-', '*'];
+  return [getRandomInt(1, 25), getRandomInt(1, 25), signArray[getRandomInt(0, 2)]];
+}
+
+function multiplyAndConvertToStr(firstNumber, secondNumber) {
+  return [`${firstNumber} * ${secondNumber}`, String(firstNumber * secondNumber)];
+}
+
+function subtractionAndConvertToStr(firstNumber, secondNumber) {
+  return [`${firstNumber} - ${secondNumber}`, String(firstNumber - secondNumber)];
+}
+
+function additionAndConvertToStr(firstNumber, secondNumber) {
+  return [`${firstNumber} + ${secondNumber}`, String(firstNumber + secondNumber)];
 }
 
 const dataForCalcGame = () => {
@@ -10,22 +23,19 @@ const dataForCalcGame = () => {
   let expressionString;
   const [firstNumber, secondNumber, mathSign] = generateDataForGame();
   switch (mathSign) {
-    case 0: // Multiply
-      expressionString = `${firstNumber} * ${secondNumber}`;
-      expressionResult = firstNumber * secondNumber;
+    case '*':
+      [expressionString, expressionResult] = multiplyAndConvertToStr(firstNumber, secondNumber);
       break;
 
-    case 1: // Subtract
-      expressionString = `${firstNumber} - ${secondNumber}`;
-      expressionResult = firstNumber - secondNumber;
+    case '-':
+      [expressionString, expressionResult] = subtractionAndConvertToStr(firstNumber, secondNumber);
       break;
 
-    default: // Concatenate
-      expressionString = `${firstNumber} + ${secondNumber}`;
-      expressionResult = firstNumber + secondNumber;
+    default: // addition
+      [expressionString, expressionResult] = additionAndConvertToStr(firstNumber, secondNumber);
       break;
   }
-  return [expressionString, String(expressionResult)];
+  return [expressionString, expressionResult];
 };
 
 export default function playBrainCalc() {

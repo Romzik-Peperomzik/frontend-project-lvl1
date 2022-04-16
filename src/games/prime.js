@@ -1,4 +1,4 @@
-import getRandomInt from '../utils.js';
+import getRandomInt, { transformBoolToStatement } from '../utils.js';
 import gameEventLoop from '../index.js';
 
 function isPrime(num) {
@@ -12,8 +12,8 @@ function isPrime(num) {
 
 const dataForPrime = () => {
   const numberForGame = getRandomInt(0, 100);
-  const itIsPrime = isPrime(numberForGame) ? 'yes' : 'no';
-  return [numberForGame, itIsPrime];
+  const itIsPrime = isPrime(numberForGame);
+  return [numberForGame, transformBoolToStatement(itIsPrime)];
 };
 
 export default function playBrainPrime() {
