@@ -1,23 +1,23 @@
 import getRandomInt from '../utils.js';
-import gameEventLoop from '../index.js';
+import startGameLoop from '../index.js';
 
 function generateDataForGame() {
   return [getRandomInt(1, 100), getRandomInt(1, 100)];
 }
 
-function gcd(a, b) {
+function calculateGCD(a, b) {
   if (!b) {
     return a;
   }
-  return gcd(b, a % b);
+  return calculateGCD(b, a % b);
 }
 
-const dataForGCDGame = () => {
+const getDataForGCDGame = () => {
   const [firstNumber, secondNumber] = generateDataForGame();
-  const GCDNumber = gcd(firstNumber, secondNumber);
-  return [`${firstNumber} ${secondNumber}`, String(GCDNumber)];
+  const gcdNumber = calculateGCD(firstNumber, secondNumber);
+  return [`${firstNumber} ${secondNumber}`, String(gcdNumber)];
 };
 
 export default function playBrainGCD() {
-  gameEventLoop(dataForGCDGame, 'Find the greatest common divisor of given numbers.');
+  startGameLoop(getDataForGCDGame, 'Find the greatest common divisor of given numbers.');
 }
