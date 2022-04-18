@@ -1,10 +1,6 @@
 import getRandomInt from '../utils.js';
 import startGameLoop from '../index.js';
 
-function generateDataForGame() {
-  return [getRandomInt(1, 100), getRandomInt(1, 100)];
-}
-
 function calculateGCD(a, b) {
   if (!b) {
     return a;
@@ -13,7 +9,7 @@ function calculateGCD(a, b) {
 }
 
 const getDataForGCDGame = () => {
-  const [firstNumber, secondNumber] = generateDataForGame();
+  const [firstNumber, secondNumber] = [getRandomInt(1, 100), getRandomInt(1, 100)];
   const gcdNumber = calculateGCD(firstNumber, secondNumber);
   return [`${firstNumber} ${secondNumber}`, String(gcdNumber)];
 };
