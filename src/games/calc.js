@@ -1,41 +1,27 @@
 import getRandomInt from '../utils.js';
 import startGameLoop from '../index.js';
 
-function generateDataForGame() {
-  const signs = ['+', '-', '*'];
-  return [getRandomInt(1, 25), getRandomInt(1, 25), signs[getRandomInt(0, 2)]];
-}
+function getExpressionResult(firstNumber, mathSign, secondNumber) {
+  switch (mathSign) {
+    case '*':
+      return firstNumber * secondNumber;
 
-function multiplyAndConvertToStr(firstNumber, secondNumber) {
-  return [`${firstNumber} * ${secondNumber}`, String(firstNumber * secondNumber)];
-}
+    case '-':
+      return firstNumber - secondNumber;
 
-function subtractAndConvertToStr(firstNumber, secondNumber) {
-  return [`${firstNumber} - ${secondNumber}`, String(firstNumber - secondNumber)];
-}
-
-function addAndConvertToStr(firstNumber, secondNumber) {
-  return [`${firstNumber} + ${secondNumber}`, String(firstNumber + secondNumber)];
+    default: // addition
+      return firstNumber + secondNumber;
+  }
 }
 
 const getDataForCalcGame = () => {
-  let expressionResult = 0;
-  let expressionString;
-  const [firstNumber, secondNumber, mathSign] = generateDataForGame();
-  switch (mathSign) {
-    case '*':
-      [expressionString, expressionResult] = multiplyAndConvertToStr(firstNumber, secondNumber);
-      break;
+  const signs = ['+', '-', '*'];
+  const mathSign = signs[getRandomInt(0, 2)];
+  const [firstNumber, secondNumber] = [getRandomInt(1, 25), getRandomInt(1, 25)];
+  const expressionString = `${firstNumber} ${mathSign} ${secondNumber}`;
+  const expressionResult = getExpressionResult(firstNumber, mathSign, secondNumber);
 
-    case '-':
-      [expressionString, expressionResult] = subtractAndConvertToStr(firstNumber, secondNumber);
-      break;
-
-    default: // addition
-      [expressionString, expressionResult] = addAndConvertToStr(firstNumber, secondNumber);
-      break;
-  }
-  return [expressionString, expressionResult];
+  return [expressionString, String(expressionResult)];
 };
 
 export default function playBrainCalc() {
