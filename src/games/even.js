@@ -1,10 +1,14 @@
-import getRandomInt, { transformBoolToStatement } from '../utils.js';
+import getRandomInt from '../utils.js';
 import startGameLoop from '../index.js';
+
+function isEven(num) {
+  return num % 2 === 0;
+}
 
 const getDataForEvenGame = () => {
   const numberForGame = getRandomInt(0, 100);
-  const numberForGameEvenOrOdd = numberForGame % 2 === 0;
-  return [numberForGame, transformBoolToStatement(numberForGameEvenOrOdd)];
+  const numberForGameEvenOrOdd = isEven(numberForGame) ? 'yes' : 'no';
+  return [numberForGame, numberForGameEvenOrOdd];
 };
 
 export default function playBrainEven() {

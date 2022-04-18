@@ -3,7 +3,3 @@ export default function getRandomInt(min, max) {
   const maxNumber = Math.floor(max);
   return Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
 }
-
-export function transformBoolToStatement(bool) {
-  return bool ? 'yes' : 'no';
-}
