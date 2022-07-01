@@ -18,25 +18,25 @@ make install
 ## Run games:
 <details>
 <summary><h4>Brain-even:</h4></summary>
-  <a href="https://asciinema.org/a/YMR3TXMtZ34vUNCgoV8IbkQfo" target="_blank"><img src="https://asciinema.org/a/YMR3TXMtZ34vUNCgoV8IbkQfo.svg" /></a> 
+  <a href="https://asciinema.org/a/7uvIakXWq02tYcXrETx1cx63H" target="_blank"><img src="https://asciinema.org/a/7uvIakXWq02tYcXrETx1cx63H.svg" /></a>
 </details>
 
 <details>
 <summary><h4>Brain-calc:</h4></summary>
-  <a href="https://asciinema.org/a/i2QKG4lsgpZSudYDnZicRywh3" target="_blank"><img src="https://asciinema.org/a/i2QKG4lsgpZSudYDnZicRywh3.svg" /></a>
+  <a href="https://asciinema.org/a/3hFhDaUc7YtQOwgS9Vpummha3" target="_blank"><img src="https://asciinema.org/a/3hFhDaUc7YtQOwgS9Vpummha3.svg" /></a>
 </details>
 
 <details>
 <summary><h4>Brain-gcd:</h4></summary>
-  <a href="https://asciinema.org/a/YgaQPsKQkOOIqo8pUaQL9rQBF" target="_blank"><img src="https://asciinema.org/a/YgaQPsKQkOOIqo8pUaQL9rQBF.svg" /></a>
+  <a href="https://asciinema.org/a/ckx9tXFMvfrRcxPHdHJVw6cog" target="_blank"><img src="https://asciinema.org/a/ckx9tXFMvfrRcxPHdHJVw6cog.svg" /></a>
 </details>
 
 <details>
-<summary><h4>Brain-prime:</h4></summary>
-  <a href="https://asciinema.org/a/GdBdbxkwORLaTwRzjoaX0eazt" target="_blank"><img src="https://asciinema.org/a/GdBdbxkwORLaTwRzjoaX0eazt.svg" /></a>
+<summary><h4>Brain-prime:</h4></summary>  
+  <a href="https://asciinema.org/a/bjfvUHrTZb9g55D6gnhxzpMro" target="_blank"><img src="https://asciinema.org/a/bjfvUHrTZb9g55D6gnhxzpMro.svg" /></a>
 </details>
 
 <details>
 <summary><h4>Brain-progression:</h4></summary>
-  <a href="https://asciinema.org/a/EkhD02LRXjH1k2WTpwS3DsDPC" target="_blank"><img src="https://asciinema.org/a/EkhD02LRXjH1k2WTpwS3DsDPC.svg" /></a>
+  <a href="https://asciinema.org/a/5BssZVvOG5ykBQIki9Hz5UVpv" target="_blank"><img src="https://asciinema.org/a/5BssZVvOG5ykBQIki9Hz5UVpv.svg" /></a>
 </details>
